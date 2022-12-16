@@ -1,5 +1,5 @@
-import { InMemoryNotificationRepository } from '../../../test/repositories/in-memory-notification-repository';
-import { SendNotification } from './send-notification';
+import { InMemoryNotificationRepository } from '@test/repositories/in-memory-notification-repository';
+import { SendNotification } from '@app/use-cases/send-notification';
 
 const inMemoryRepository = new InMemoryNotificationRepository();
 

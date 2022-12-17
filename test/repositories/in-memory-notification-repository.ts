@@ -16,6 +16,12 @@ export class InMemoryNotificationRepository implements NotificationRepository {
     return notification;
   }
 
+  async findManyByRecipientId(recipientId: string): Promise<Notification[]> {
+    return this.notifications.filter(
+      (notifications) => notifications.recipientId === recipientId,
+    );
+  }
+
   async save(notification: Notification): Promise<void> {
     const notificationIndex = this.notifications.findIndex(
       (item) => item.id === notification.id,

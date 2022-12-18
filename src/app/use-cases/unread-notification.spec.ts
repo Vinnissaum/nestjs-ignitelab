@@ -1,12 +1,12 @@
 import { InMemoryNotificationRepository } from '@test/repositories/in-memory-notification-repository';
-import { UnReadNotification } from '@app/use-cases/unread-notification';
+import { UnreadNotification } from '@app/use-cases/unread-notification';
 import { NotificationNotFound } from '@app/use-cases/errors/notification-not-found';
 import { makeNotification } from '@test/factories/notification-factory';
 
 describe('Read notification', () => {
   it('should be able to unread a notification', async () => {
     const notificationRepository = new InMemoryNotificationRepository();
-    const unreadNotification = new UnReadNotification(notificationRepository);
+    const unreadNotification = new UnreadNotification(notificationRepository);
 
     const notification = makeNotification({
       readAt: new Date(),
@@ -23,7 +23,7 @@ describe('Read notification', () => {
 
   it('should not be able to unread a non existing notification', async () => {
     const notificationRepository = new InMemoryNotificationRepository();
-    const unreadNotification = new UnReadNotification(notificationRepository);
+    const unreadNotification = new UnreadNotification(notificationRepository);
 
     expect(() => {
       return unreadNotification.execute({
